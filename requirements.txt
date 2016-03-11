@@ -2,8 +2,8 @@ dill==0.2.1
 Flask==0.10.1
 gunicorn==19.3.0
 Jinja2==2.7.2
-json>=0.1.0
-datetime>=0.1.0
+oauth==1.0.1
+oauthlib==0.7.2
 urllib2>=2.7.0
 pandas==0.17.1
 bokeh==0.11.0

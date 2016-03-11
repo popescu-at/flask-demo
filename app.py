@@ -59,10 +59,10 @@ def ExtractData(ticker):
         data = Jload(urlopen(url))['dataset']
         data = pd.DataFrame(data['data'], columns=data['column_names'])
     except:
-        data = []
+        data = pd.DataFrame([])
     return data
     
 
 
 if __name__ == '__main__':
-  app.run()
+  app.run(debug=True)
