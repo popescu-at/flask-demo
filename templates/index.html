@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>Flask Demo</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+	</head>
+	<body>
+		<div>
+			<h3>
+				The following script receives a stock ticker as input, and plots
+				historical data
+			</h3>
+  			<h4>
+				Please enter a stock ticker (eg. JPM, ADT, GOOG, etc.):
+			</h4>
+
+			<form id='data' method='post' action='get_data' >
+				<p>
+					Ticker: <input type='text' name='ticker' />
+				</p>
+				<p>
+					<input type='submit' value='Submit' />
+				</p>
+			</form>
+		</div>
+	</body>
+</html>
