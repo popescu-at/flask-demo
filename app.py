@@ -4,6 +4,7 @@ from urllib2 import urlopen
 from json import load as Jload
 import pandas as pd
 from bokeh.plotting import figure, output_file, save
+import numpy as np
 
 app = Flask(__name__)
 
@@ -27,13 +28,15 @@ def get_data():
 def BuildGraph(data, tick):
     if data.empty:
         return []
-    output_file("./templates/graph.html")
+    output_file("./templates/graph.html", title='Closing prices')
     p = figure(
             tools="pan,box_zoom,reset,save", title='Closing price for last month',
-            x_axis_label='Days', y_axis_label='Closing Price'
+            x_axis_label='Date', y_axis_label='Closing Price',
+            x_axis_type='datetime'
             )
     try:
-        p.line(range(data.shape[0]), data['Close'], legend=tick)
+        dates = np.array(data['Date'], dtype=np.datetime64)
+        p.line(dates, data['Close'], legend=tick)
         save(p)
         name = 'graph.html'
     except:
